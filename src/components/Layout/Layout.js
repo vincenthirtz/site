@@ -6,7 +6,7 @@ import Footer from "./Footer";
 
 const Layout = props => {
   const { component } = props;
-  const [handleMenu, setHandleMenu] = React.useState(false);
+  const [handleMenu, setHandleMenu] = useState(false);
 
   const toggleMenu = e => {
     e.stopPropagation();
