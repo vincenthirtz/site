@@ -8,6 +8,7 @@
     "react-scripts": "3.2.0"
   },
   "scripts": {
+    "rs": "npm i -g react-scripts",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
