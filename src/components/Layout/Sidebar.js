@@ -19,11 +19,11 @@ import StarBorder from '@material-ui/icons/StarBorder';
 import logo from "img/logo.png";
 
 const useStyles = makeStyles(theme => ({
-    root: {
-        width: '100%',
-        maxWidth: 360,
+    root: props => ({
+        width: props.small ? '0%' : `100%`,
+        maxWidth: props.small ? 0 : 360,
         backgroundColor: theme.palette.background.paper,
-    },
+    }),
     nested: {
         paddingLeft: theme.spacing(4),
     },
@@ -31,7 +31,8 @@ const useStyles = makeStyles(theme => ({
 
 const Sidebar = props => {
     const { small } = props;
-    const classes = useStyles();
+    const propsStyles = { small: small };
+    const classes = useStyles(propsStyles);
     const [open, setOpen] = React.useState(true);
 
     const handleClick = () => {
@@ -42,12 +43,13 @@ const Sidebar = props => {
     return (
         <SidebarStyled small={small}>
             <List
+                style={{ display: small ? "none" : "block" }}
                 component="nav"
                 aria-labelledby="nested-list-subheader"
                 subheader={
                     <ListSubheader component="div" id="nested-list-subheader">
-                       <img src={logo} alt="logo" />
-        </ListSubheader>
+                        <img src={logo} alt="logo" />
+                    </ListSubheader>
                 }
                 className={classes.root}
             >
