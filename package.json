@@ -10,7 +10,7 @@
     "react-scripts": "3.2.0"
   },
   "scripts": {
-    "rs": "npm i -g react-scripts",
+    "rs": "NODE_ENV=production node_modules/react-scripts/bin/react-scripts.js start",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
