@@ -15,7 +15,11 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
-
+import Switch from '@material-ui/core/Switch';
+import { useTranslation } from 'react-i18next';
+import i18next from 'i18next';
+import fr from "img/fr.png";
+import uk from "img/uk.png";
 
 const useStyles = makeStyles(theme => ({
     grow: {
@@ -80,15 +84,23 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Header = props => {
-
     const { handleMenu } = props;
-
+    const { t } = useTranslation();
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
     const isMenuOpen = Boolean(anchorEl);
     const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+
+    const [state, setState] = React.useState({
+        checkedA: true,
+      });
+
+      const handleChange = name => event => {
+        setState({ ...state, [name]: event.target.checked });
+        i18next.changeLanguage(i18next.language === 'fr' ? 'en' : 'fr');
+      };
 
     const handleProfileMenuOpen = event => {
         setAnchorEl(event.currentTarget);
@@ -179,8 +191,8 @@ const Header = props => {
                             <MenuIcon />
                         </IconButton>
                         <Typography className={classes.title} variant="h6" noWrap>
-                            Material-UI
-          </Typography>
+                            {t('siteName', { siteName: process.env.REACT_APP_SITENAME })}
+                        </Typography>
                         <div className={classes.search}>
                             <div className={classes.searchIcon}>
                                 <SearchIcon />
@@ -196,6 +208,16 @@ const Header = props => {
                         </div>
                         <div className={classes.grow} />
                         <div className={classes.sectionDesktop}>
+                            <IconButton aria-label="show 4 new mails" color="inherit">
+                                <img src={fr} width="25px" height="25px" alt="fr" />
+                                <Switch
+                                    checked={state.checkedA}
+                                    onChange={handleChange('checkedA')}
+                                    value="checkedA"
+                                    inputProps={{ 'aria-label': 'secondary checkbox' }}
+                                />
+                                <img src={uk} width="25px" height="25px" alt="en" />
+                            </IconButton>
                             <IconButton aria-label="show 4 new mails" color="inherit">
                                 <Badge badgeContent={4} color="secondary">
                                     <MailIcon />

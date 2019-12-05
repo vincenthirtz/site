@@ -16,6 +16,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import StarBorder from '@material-ui/icons/StarBorder';
+import { useTranslation } from 'react-i18next';
 import logo from "img/logo.png";
 
 const useStyles = makeStyles(theme => ({
@@ -34,6 +35,7 @@ const Sidebar = props => {
     const propsStyles = { small: small };
     const classes = useStyles(propsStyles);
     const [open, setOpen] = React.useState(true);
+    const { t } = useTranslation();
 
     const handleClick = () => {
         setOpen(!open);
@@ -58,7 +60,7 @@ const Sidebar = props => {
                         <ListItemIcon>
                             <HomeIcon />
                         </ListItemIcon>
-                        <ListItemText primary="Home" />
+                        <ListItemText primary={t('welcome')} />
                     </ListItem>
                 </Link>
                 <Link to="/blog">
@@ -66,7 +68,7 @@ const Sidebar = props => {
                         <ListItemIcon>
                             <CreateIcon />
                         </ListItemIcon>
-                        <ListItemText primary="Blog" />
+                        <ListItemText primary={t('blog')}  />
                     </ListItem>
                 </Link>
                 <ListItem button onClick={handleClick}>
