@@ -10,12 +10,16 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Collapse from '@material-ui/core/Collapse';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
+import LinkIcon from '@material-ui/icons/Link';
 import CreateIcon from '@material-ui/icons/Create';
 import HomeIcon from '@material-ui/icons/Home';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
-import StarBorder from '@material-ui/icons/StarBorder';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import CodeIcon from '@material-ui/icons/Code';
 import { useTranslation } from 'react-i18next';
 import logo from "img/logo.png";
 
@@ -68,23 +72,49 @@ const Sidebar = props => {
                         <ListItemIcon>
                             <CreateIcon />
                         </ListItemIcon>
-                        <ListItemText primary={t('blog')}  />
+                        <ListItemText primary={t('blog')} />
+                    </ListItem>
+                </Link>
+                <Link to="/portfolio">
+                    <ListItem button>
+                        <ListItemIcon>
+                            <CodeIcon />
+                        </ListItemIcon>
+                        <ListItemText primary={t('portfolio')} />
                     </ListItem>
                 </Link>
                 <ListItem button onClick={handleClick}>
                     <ListItemIcon>
-                        <InboxIcon />
+                        <LinkIcon />
                     </ListItemIcon>
-                    <ListItemText primary="Inbox" />
+                    <ListItemText primary="Liens" />
                     {open ? <ExpandLess /> : <ExpandMore />}
                 </ListItem>
                 <Collapse in={open} timeout="auto" unmountOnExit>
                     <List component="div" disablePadding>
                         <ListItem button className={classes.nested}>
                             <ListItemIcon>
-                                <StarBorder />
+                                <TwitterIcon />
                             </ListItemIcon>
-                            <ListItemText primary="Starred" />
+                            <ListItemText primary="Twitter" />
+                        </ListItem>
+                        <ListItem button className={classes.nested}>
+                            <ListItemIcon>
+                                <LinkedInIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="Linkedin" />
+                        </ListItem>
+                        <ListItem button className={classes.nested}>
+                            <ListItemIcon>
+                                <InstagramIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="Instagram" />
+                        </ListItem>
+                        <ListItem button className={classes.nested}>
+                            <ListItemIcon>
+                                <GitHubIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="Github" />
                         </ListItem>
                     </List>
                 </Collapse>

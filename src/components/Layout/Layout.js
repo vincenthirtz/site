@@ -1,17 +1,17 @@
-import React , { useState } from 'react';
+import React, { useState } from 'react';
 import styled from "styled-components";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 import Footer from "./Footer";
 
 const Layout = props => {
-  const { component } = props;
+  const { Component } = props;
   const [handleMenu, setHandleMenu] = useState(false);
 
   const toggleMenu = e => {
     e.stopPropagation();
     setHandleMenu(!handleMenu);
-};
+  };
 
   return (
     <LayoutStyled>
@@ -19,7 +19,7 @@ const Layout = props => {
       <CoreStyled>
         <Header handleMenu={toggleMenu} />
         <ComponentStyled>
-          {component()}
+          <Component />
         </ComponentStyled>
         <Footer />
       </CoreStyled>

@@ -175,7 +175,6 @@ const Header = props => {
             </MenuItem>
         </Menu>
     );
-
     return (
         <HeaderStyled>
             <div className={classes.grow}>

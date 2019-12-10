@@ -1,5 +1,6 @@
 {
     "siteName": "{{siteName}}",
     "welcome": "Accueil",
-    "blog": "Blog"
+    "blog": "Blog",
+    "portfolio": "Réalisations"
 }
