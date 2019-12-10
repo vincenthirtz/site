@@ -1,10 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import moment from 'moment'
 import * as Markdown from 'react-markdown'
 
-const BlogPost = ({ location: { state: { props } } }) => {
-    const { fields } = props;
+const BlogPost = props => {
+    const {location} = props;
+    const {state} = location;
+    const {fields} = state;
     const { content, icon, date, title } = fields;
     return (
         <React.Fragment>
@@ -38,4 +40,4 @@ const BlogPost = ({ location: { state: { props } } }) => {
         </React.Fragment>
     )
 }
-export default BlogPost
+export default withRouter(BlogPost);

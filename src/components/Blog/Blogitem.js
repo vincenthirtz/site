@@ -25,7 +25,7 @@ const BlogItem = (props) => {
                             <Link className="level-item button is-small is-link is-outlined"
                                 to={{
                                     pathname: `/blog/${path}`,
-                                    state: { props }
+                                    state: { fields }
                                 }}
                             >
                                 Read More

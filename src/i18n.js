@@ -8,7 +8,7 @@ i18n
     .use(Backend)
     .use(initReactI18next)
     .init({
-        debug: true,
+        debug: false,
         lng: process.env.REACT_APP_SECONDARY_LANG,
         fallbackLng: process.env.REACT_APP_PRIMARY_LANG,
         defaultNS: 'translation',
