@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from "styled-components";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
-import Footer from "./Footer";
+// import Footer from "./Footer";
 
 const Layout = props => {
   const { Component } = props;
@@ -18,10 +18,12 @@ const Layout = props => {
       <Sidebar small={handleMenu} />
       <CoreStyled>
         <Header handleMenu={toggleMenu} />
-        <ComponentStyled>
-          <Component />
-        </ComponentStyled>
-        <Footer />
+        <ScrollStyled>
+          <ComponentStyled>
+            <Component />
+          </ComponentStyled>
+        </ScrollStyled>
+        {/* <Footer small={handleMenu} /> */}
       </CoreStyled>
     </LayoutStyled>
   );
@@ -35,12 +37,18 @@ const LayoutStyled = styled.div`
 `;
 
 const ComponentStyled = styled.div`
-flex: 1;
+padding: 20px;
+    background: #f0f0f0;
 `;
 
 const CoreStyled = styled.div`
 display: flex;
 flex-direction: column;
 width: 100%;
+`;
+
+const ScrollStyled = styled.div`
+height: 100%;
+overflow: auto;
 `;
 

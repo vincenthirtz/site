@@ -27,7 +27,7 @@ const BlogPost = props => {
             <article className="media">
                 <div className="media-left">
                     <figure className="image is-64x64">
-                        <img src={icon} alt="Image" />
+                        <img src={icon} alt="blog post item" />
                     </figure>
                 </div>
                 <div className="media-content">

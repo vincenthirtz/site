@@ -261,6 +261,5 @@ const Header = props => {
 export default Header;
 
 const HeaderStyled = styled.div`
-    flex: 1;
 `;
 
