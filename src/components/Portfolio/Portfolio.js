@@ -8,6 +8,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import PortfolioFake from "./PortfolioFake";
 import dg from "img/dg.png";
 import l from "img/lemarchand.png";
 
@@ -38,73 +39,25 @@ const Portfolio = () => {
             link: "https://www.lemarchand-sas.plateforms.fr/",
         },
         {
-            key: 2,
-            title: "Lemarchand",
-            image: l,
-            description: "Site vitrine entreprise normande",
-            link: "https://www.lemarchand-sas.plateforms.fr/",
         },
         {
-            key: 2,
-            title: "Lemarchand",
-            image: l,
-            description: "Site vitrine entreprise normande",
-            link: "https://www.lemarchand-sas.plateforms.fr/",
         },
         {
-            key: 2,
-            title: "Lemarchand",
-            image: l,
-            description: "Site vitrine entreprise normande",
-            link: "https://www.lemarchand-sas.plateforms.fr/",
         },
         {
-            key: 2,
-            title: "Lemarchand",
-            image: l,
-            description: "Site vitrine entreprise normande",
-            link: "https://www.lemarchand-sas.plateforms.fr/",
         },
         {
-            key: 2,
-            title: "Lemarchand",
-            image: l,
-            description: "Site vitrine entreprise normande",
-            link: "https://www.lemarchand-sas.plateforms.fr/",
         },
         {
-            key: 2,
-            title: "Lemarchand",
-            image: l,
-            description: "Site vitrine entreprise normande",
-            link: "https://www.lemarchand-sas.plateforms.fr/",
         },
         {
-            key: 2,
-            title: "Lemarchand",
-            image: l,
-            description: "Site vitrine entreprise normande",
-            link: "https://www.lemarchand-sas.plateforms.fr/",
         },
-        {
-            key: 2,
-            title: "Lemarchand",
-            image: l,
-            description: "Site vitrine entreprise normande",
-            link: "https://www.lemarchand-sas.plateforms.fr/",
-        },
-        {
-            key: 2,
-            title: "Lemarchand",
-            image: l,
-            description: "Site vitrine entreprise normande",
-            link: "https://www.lemarchand-sas.plateforms.fr/",
-        }
     ]
+    const fakeCards = cards.filter(card => !card.key)
 
     return (
         <PortfolioComponent>
-            {cards && cards.map(card => (
+            {cards && cards.map(card => card.key &&
                 <Card key={card.key} className={classes.card}>
                     <CardActionArea>
                         <CardMedia
@@ -127,7 +80,8 @@ const Portfolio = () => {
                         </Button>
                     </CardActions>
                 </Card>
-            ))}
+            )}
+            {fakeCards && fakeCards.map(() => <PortfolioFake />)}
         </PortfolioComponent>
     );
 }

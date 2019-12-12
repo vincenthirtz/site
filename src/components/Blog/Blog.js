@@ -1,20 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import styled from "styled-components";
-import * as contentful from 'contentful';
 import BlogItem from "./Blogitem";
+import BlogService from "services/BlogService";
 
-const client = contentful.createClient({
-    space: process.env.REACT_APP_SPACE,
-    accessToken: process.env.REACT_APP_ACCESSTOKEN
-})
 
 const Blog = () => {
 
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-        client.getEntries().then(res => {
-            setPosts(res.items)
+        BlogService.getPosts().then(entries => {
+            setPosts(entries)
         });
     }, []);
 

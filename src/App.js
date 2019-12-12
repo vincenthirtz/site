@@ -13,9 +13,9 @@ import BlogPost from "components/Blog/Blogpost";
 const App = () => (<Router>
   <Switch>
     <Layout exact path="/" Component={Home} />
-    <Layout exact path="/blog" Component={Blog} />
+    <Layout path="/blog" Component={Blog} />
     <Layout path='/blog/:blogPost' Component={BlogPost}/>
-    <Layout exact path="/portfolio" Component={Portfolio} />
+    <Layout path="/portfolio" Component={Portfolio} />
     <Layout path="*" Component={NotFound} />
   </Switch>
 </Router>);

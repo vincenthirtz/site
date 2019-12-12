@@ -24,6 +24,7 @@ const BlogItem = (props) => {
     const { fields } = props;
     console.log(fields)
     const { content, icon, path, date, title } = fields;
+    console.log("date ", date)
     const classes = useStyles();
 
     return (
@@ -44,25 +45,15 @@ const BlogItem = (props) => {
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                <div className="level-left">
-                    <Link className="level-item button is-small is-link is-outlined"
-                        to={{
-                            pathname: `/blog/${path}`,
-                            state: { fields }
-                        }}
-                    >
-                        En savoir plus
-</Link>
-                </div>
-                <div className="level-right">
-                    <p className="level-item has-text-link is-size-7">            {moment(date).calendar(null, {
-                        sameDay: '[Today]',
-                        lastDay: '[Yesterday]',
-                        lastWeek: '[Last] dddd',
-                        sameElse: 'MMM Do YYYY'
-                    })}
-                    </p>
-                </div>
+                <Link
+                    to={{
+                        pathname: `/blog/${path}`,
+                        state: { fields }
+                    }}
+                >
+                    En savoir plus
+                    </Link>
+                {moment(date).format("L")}
             </CardActions>
         </Card>
     )

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import {
-    Link,
+    NavLink,
 } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
 import ListSubheader from '@material-ui/core/ListSubheader';
@@ -46,6 +46,11 @@ const Sidebar = props => {
     };
 
 
+    const activeStyle = {
+        fontWeight: "bold",
+        color: "red"
+    };
+
     return (
         <SidebarStyled small={small}>
             <List
@@ -59,30 +64,30 @@ const Sidebar = props => {
                 }
                 className={classes.root}
             >
-                <Link to="/">
+                <NavLink exact activeStyle={activeStyle} to="/">
                     <ListItem button>
                         <ListItemIcon>
                             <HomeIcon />
                         </ListItemIcon>
                         <ListItemText primary={t('welcome')} />
                     </ListItem>
-                </Link>
-                <Link to="/blog">
+                </NavLink  >
+                <NavLink activeStyle={activeStyle} to="/blog">
                     <ListItem button>
                         <ListItemIcon>
                             <CreateIcon />
                         </ListItemIcon>
                         <ListItemText primary={t('blog')} />
                     </ListItem>
-                </Link>
-                <Link to="/portfolio">
+                </NavLink  >
+                <NavLink activeStyle={activeStyle} to="/portfolio">
                     <ListItem button>
                         <ListItemIcon>
                             <CodeIcon />
                         </ListItemIcon>
                         <ListItemText primary={t('portfolio')} />
                     </ListItem>
-                </Link>
+                </NavLink  >
                 <ListItem button onClick={handleClick}>
                     <ListItemIcon>
                         <LinkIcon />
