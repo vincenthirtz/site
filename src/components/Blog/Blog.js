@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import styled from "styled-components";
 import * as contentful from 'contentful';
 import BlogItem from "./Blogitem";
 
@@ -18,12 +19,23 @@ const Blog = () => {
     }, []);
 
     return (
-        <React.Fragment>
+        <BlogItemComponent>
             {posts && posts.map((fields, i) => (
                 <BlogItem key={i} {...fields} />
             ))}
-        </React.Fragment>
+        </BlogItemComponent>
     );
 }
 
 export default Blog;
+
+const BlogItemComponent = styled.div`
+display: flex;
+flex-flow: row wrap;
+    margin-left: -8px;
+    width: 100%;
+    height: 100%;
+& > * {
+    padding: 20px;
+}
+`;
