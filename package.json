@@ -2,7 +2,6 @@
   "name": "vincent-hirtz",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:8080",
   "dependencies": {
     "@material-ui/core": "^4.7.1",
     "@material-ui/icons": "^4.5.1",
@@ -24,7 +23,7 @@
   },
   "scripts": {
     "rs": "NODE_ENV=production ./node_modules/react-scripts/bin/react-scripts.js start",
-    "start": "PORT=8080 react-scripts start",
+    "start": "PORT=3050 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
