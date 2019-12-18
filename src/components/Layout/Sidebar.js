@@ -9,16 +9,8 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import Collapse from '@material-ui/core/Collapse';
-import LinkIcon from '@material-ui/icons/Link';
 import CreateIcon from '@material-ui/icons/Create';
 import HomeIcon from '@material-ui/icons/Home';
-import ExpandLess from '@material-ui/icons/ExpandLess';
-import ExpandMore from '@material-ui/icons/ExpandMore';
-import TwitterIcon from '@material-ui/icons/Twitter';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import GitHubIcon from '@material-ui/icons/GitHub';
 import CodeIcon from '@material-ui/icons/Code';
 import { useTranslation } from 'react-i18next';
 import logo from "img/logo.png";
@@ -88,41 +80,6 @@ const Sidebar = props => {
                         <ListItemText primary={t('portfolio')} />
                     </ListItem>
                 </NavLink  >
-                <ListItem button onClick={handleClick}>
-                    <ListItemIcon>
-                        <LinkIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Liens" />
-                    {open ? <ExpandLess /> : <ExpandMore />}
-                </ListItem>
-                <Collapse in={open} timeout="auto" unmountOnExit>
-                    <List component="div" disablePadding>
-                        <ListItem button className={classes.nested}>
-                            <ListItemIcon>
-                                <TwitterIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="Twitter" />
-                        </ListItem>
-                        <ListItem button className={classes.nested}>
-                            <ListItemIcon>
-                                <LinkedInIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="Linkedin" />
-                        </ListItem>
-                        <ListItem button className={classes.nested}>
-                            <ListItemIcon>
-                                <InstagramIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="Instagram" />
-                        </ListItem>
-                        <ListItem button className={classes.nested}>
-                            <ListItemIcon>
-                                <GitHubIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="Github" />
-                        </ListItem>
-                    </List>
-                </Collapse>
             </List>
         </SidebarStyled>
     );

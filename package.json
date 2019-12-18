@@ -15,10 +15,11 @@
     "path": "^0.12.7",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-file-viewer": "^1.2.1",
     "react-i18next": "^11.2.5",
     "react-markdown": "^4.2.2",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.2.0",
+    "react-scripts": "^3.3.0",
     "styled-components": "^4.4.1"
   },
   "scripts": {
