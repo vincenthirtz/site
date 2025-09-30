@@ -6,7 +6,7 @@
     "@material-ui/core": "^4.7.1",
     "@material-ui/icons": "^4.5.1",
     "@material-ui/lab": "^4.0.0-alpha.35",
-    "contentful": "^7.10.0",
+    "contentful": "^11.8.1",
     "express": "^4.17.1",
     "i18next": "^19.0.1",
     "i18next-browser-languagedetector": "^4.0.1",
